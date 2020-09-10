@@ -1,0 +1,129 @@
+#fade{
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: .6;
+  z-index: 20;
+}
+#login{
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  height: 60%;
+  background: transparent;
+  z-index: 30;
+  border-radius:10px;
+  min-width: 630px;
+}
+#register_div{
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  height: 60%;
+  background: transparent;
+  z-index: 30;
+  border-radius:10px;
+  min-width: 630px;
+}
+.login{
+  position: relative;
+}
+.login-img img{
+  width: 100%;
+}
+.login-position{
+  position: absolute;
+  top: 30px;
+  left: calc(50% - 200px);
+  width: 400px;
+  font-size: 30px;
+  display: inline-block;
+  text-align: center;
+}
+.login-position h1{
+  text-align: center;
+  padding-top: 20px;
+  font-size: 25px;
+  color: #187898;
+  font-weight: 900;
+}
+.login-position .account{
+  margin-top: 20px;
+  font-size: 22px;
+  position: relative;
+  display: inline-block;
+}
+.login-position .account div{
+  line-height: 1.8;
+}
+.login-position .account input{
+  height: 22px;
+  width: 200px;
+  vertical-align: middle;
+}
+.login-position .account input:focus{
+  outline: none;
+  border-style:solid; 
+  border-color: #2fb3d1; 
+  box-shadow: 0 0 5px #2fb3d1;
+}
+.login-position .forget{
+  font-size: 16px;
+  position: absolute;
+  right: 0;
+  color: #000;
+  text-decoration: none;
+}
+.login-position .forget:hover{
+  color: #CE0000;
+}
+.login-position .login-button{
+  margin-top: 25px;
+}
+.login-position .login-button button{
+  height: 35px;
+  width: 80px;
+  border-radius: 20px;
+  border: none;
+  background-color: #fff;
+  color: #2fb3d1;
+  font-weight: bold;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: .3s;
+}
+.login-position .login-button .yesbt{
+  margin-right: 5px;
+}
+.login-position .login-button .nobt{
+  margin-left: 5px;
+}
+.login-position .login-button button:hover{
+  transform: translateY(-3px);
+  background-color: #2fb3d1;
+  color: #fff;
+}
+.login-position .login-button button:focus{
+  outline: none;
+}
+.login-position p{
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: left;
+  color: #808080;
+}
+.login-position p a{
+  text-decoration: none;
+  color: #187898;
+}
+.login-position p a:hover{
+  color: blue;
+}

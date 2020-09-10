@@ -1,0 +1,77 @@
+.wrap{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    margin-top: 30px;
+}
+.left{
+    width: 30%;
+}
+.left ul{
+    font-size: 18px;
+    line-height: 1.5;
+}
+.right{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.right .test{
+    line-height: 2;
+    position: relative;
+}
+.right .test + .test::before{
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    border-bottom: 2px solid #DDD;
+    width: 100%;
+}
+.right .test button{
+    margin-left: 100px;
+    background-color: #3534c9;
+    color: #fff;
+    padding: 0 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: translateY(0);
+    transition: .2s;
+}
+.right .test button:hover{
+    transform: translateY(-2px);
+}
+.right .test button:focus{
+    outline: none;
+}
+.right .test .question{
+    display: inline-block;
+    margin-bottom: 10px;
+    color: seagreen;
+    font-weight: bold;
+}
+.title{
+    font-size: 20px;
+    color: #666666;
+    font-weight: bold;
+}
+.section{
+    margin-top: 50px;
+}
+.section .section-item{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.section .section-img img{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    border: 2px solid #bcbec0;
+    cursor: pointer;
+}
+.section .section-txt{
+    margin-left: 10px;
+    line-height: 1.5;
+}

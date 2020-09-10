@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  padding: 2rem;
+  background-color: #446072;
+  font-family: monospace;
+  color: white;
+  overflow: hidden;
+}
+
+h1 {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+h1 + p {
+  text-align: center;
+}
+
+.shelf {
+  position: relative;
+  width: 30rem;
+  height: 14rem;
+  margin: 0 auto;
+  border: 0.5rem solid #374d5b;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  perspective: 130rem;
+  box-shadow: inset 0 0 2rem rgba(0, 0, 0, 0.2);
+}
+
+.door {
+  position: absolute;
+  width: 14.8rem;
+  height: 14rem;
+  display: flex;
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: #374d5b;
+  align-items: center;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  outline: 1px solid transparent;
+}
+
+.door::before {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  content: "";
+}
+
+.door.left {
+  border-radius: 0 0.75rem 0.75rem 0;
+  justify-content: flex-end;
+  animation: leftDoorOpen 3.5s ease-out forwards 1s, leftDoorFlap 15s linear infinite forwards 9s;
+  transform-origin: 0 0 0;
+}
+
+.door.right {
+  right: 0;
+  border-radius: 0.75rem 0 0 0.75rem;
+  animation: rightDoorOpen 3s ease-out forwards 1.5s, rightDoorFlap 10s linear infinite forwards 8s;
+  transform-origin: 100% 0 0;
+}
+.container{
+  position: absolute;
+  height: 100%;
+}
+.top{
+  display: flex;
+  width: 100%;
+  height: 60%;
+}
+.top img{
+  width: 100px;
+  height: 110px;
+  padding: 10px;
+}
+.bottom{
+  display: flex;
+  width: 100%;
+  height: 40%;
+  text-align: center;
+}
+.item{
+  width: 25%;
+}
+.book:hover:not(.not-found) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes leftDoorOpen {
+  60% {
+    transform: rotateY(-115deg);
+  }
+  100% {
+    transform: rotateY(-110deg);
+  }
+}
+
+@keyframes rightDoorOpen {
+  60% {
+    transform: rotateY(125deg);
+  }
+  100% {
+    transform: rotateY(120deg);
+  }
+}
+
+@keyframes rightDoorFlap {
+  0% {
+    transform: rotateY(120deg);
+  }
+  5% {
+    transform: rotateY(125deg);
+  }
+  15% {
+    transform: rotateY(117deg);
+  }
+  25% {
+    transform: rotateY(123deg);
+  }
+  30% {
+    transform: rotateY(120deg);
+  }
+  100% {
+    transform: rotateY(120deg);
+  }
+}
+
+@keyframes leftDoorFlap {
+  0% {
+    transform: rotateY(-110deg);
+  }
+  5% {
+    transform: rotateY(-115deg);
+  }
+  15% {
+    transform: rotateY(-107deg);
+  }
+  25% {
+    transform: rotateY(-113deg);
+  }
+  30% {
+    transform: rotateY(-110deg);
+  }
+  100% {
+    transform: rotateY(-110deg);
+  }
+}
+
+@keyframes bookFadeOut {
+  50% {
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+  }
+}

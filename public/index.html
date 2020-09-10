@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <title>index</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="banner">
+            <img src="image/banner.png" alt="banner">
+            <div class="bannertxt">
+                <h1><span>ONLINE</span><br>EDUCATION</h1>
+                <p>
+                TC-teaching 主要是透過雲端影音傳授知識，使用科技讓學習零距離。除了提供程式相關過程，也透過個人考試和解答分析。讓使用者直觀掌握自我學習狀況，最後再以2P對戰和角色養成引發學習興趣與自主學習的熱忱。
+                </p>
+                <div class="banner-button">
+                    <input type="text"  value="your@gmail.com"><button class="button-position">SEND</button>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="nav-bg">
+                <img src="image/navbg.png" alt="navbg">
+            </div>
+            <div class="logo">
+                <img src="image/logo.png" alt="logo">
+            </div>
+            <nav>
+                <a href="#">關於我們</a>
+                <a href="#">相關課程</a>
+                <a href="#">聯繫我們</a>
+                <a href='javascript:void(0)' id='linkbt'><button>登入</button></a>
+            </nav>
+        </div>
+        <div class="experience">
+            <div class="item">
+                <div class="img">
+                    <img src="image/teach.png" alt="bulb">
+                </div>
+                <div class="text">
+                    <h1>FUN學習</h1>
+                    <p>
+                    一邊觀看線上課程學習,<br>
+                    一邊孕育寵物,<br>
+                    跟其他玩家對戰時助你一臂之力!
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img">
+                    <img src="image/reaction.png" alt="bulb">
+                </div>
+                <div class="text">
+                    <h1>反應快速</h1>
+                    <p>
+                    考試採用計時方式,<br>
+                    讓你把概念記得滾瓜爛熟!
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img">
+                    <img src="image/reward.png" alt="bulb">
+                </div>
+                <div class="text">
+                    <h1>收穫滿滿</h1>
+                    <p>
+                    跟著我們的腳步,<br>
+                    把課程修習完畢,<br>
+                    扎實基礎GET!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="free">
+            <div class="free-left">
+                <div class="free-position">
+                    <img src="image/cloud.png" alt="cloud">
+                    <div class="freetxt">
+                        <h1>免費試聽</h1>
+                        <br>
+                        <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.<br>
+                        Odit quasi similique reiciendis labore impedit.<br>
+                        Nisi reprehenderit praesentium odio perspiciatis rem?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="free-right">
+                <img src="image/video.png" alt="video">
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-img">
+                <img src="image/footer.png" alt="footer">
+            </div>
+            <div class="item-position">
+                <div class="item-left">
+                    <div class="text">
+                        <p>
+                        Copyright &copy;2020 All rights reserved 106中原大學資管系 
+                        </p>
+                    </div>
+                </div>
+                <div class="item-right">
+                    <div class="text">
+                        <p>
+                        tc-teaching@gmail.com 關於我們
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='login' class="login">
+        <div class="login-img">
+            <img src="image/login.png" alt="login">
+        </div>
+        <div class="login-position">
+            <h1>您好 歡迎回來TC-teaching！</h1>
+            <div class="account">
+                <div>
+                    帳號 :
+                    <input type="text" id="account" onKeyUp="value=value.replace(/[\W]/g,'')">
+                </div>
+                <div>
+                    密碼 :
+                    <input type="password" id="password">
+                </div>
+                <a href="#" class="forget">忘記密碼</a>
+                <div class="login-button">
+                    <button class="yesbt" onclick="login()">login</button>
+                    <a href='javascript:void(0)' id='closebt' class='color'><button class="nobt">取消</button></a>
+                </div>
+                <p>
+                    還不是會員嗎？<a href="javascript:void(0)" id="register">點我註冊</a>
+                </p>
+            </div>
+            
+        </div> 
+    </div>
+
+    <div id='register_div' class="login">
+        <div class="login-img">
+            <img src="image/login.png" alt="login">
+        </div>
+        <div class="login-position">
+            <h1>您好 歡迎註冊TC-teaching！</h1>
+            <div class="account">
+                <div>
+                    帳號 :
+                    <input type="text" id="account_register" onKeyUp="value=value.replace(/[\W]/g,'')">
+                </div>
+                <div>
+                    密碼 :
+                    <input type="password" id="password_register">
+                </div>
+                <div>
+                    確認密碼 :
+                    <input type="password" id="confirmpsd_register">
+                </div>
+                <div>
+                    姓名 :
+                    <input type="text" id="username_register">
+                </div>
+
+                <div class="login-button">
+                    <button class="yesbt" onclick="register()">register</button>
+                    <a href='javascript:void(0)' class='color'><button class="nobt" onclick="$('#register_div').hide();$('#fade').hide();" >取消</button></a>
+                </div>
+                
+            </div>
+            
+        </div> 
+    </div>
+    <div id='fade'></div>
+
+    <script type='text/javascript'>
+        function hi(){
+           var linkbt=document.getElementById('linkbt');
+           var login=document.getElementById('login');
+           var fade=document.getElementById('fade');
+           var closebt=document.getElementById('closebt');
+           var register=document.getElementById('register');
+           var register_div=document.getElementById('register_div');
+           linkbt.onclick=function(){
+            login.style.display='block';
+             fade.style.display='block';
+           }
+           closebt.onclick=function(){
+            login.style.display='none';
+             fade.style.display='none';
+           }
+           register.onclick=function(){
+  
+               login.style.display='none';
+               fade.style.display='none';
+               register_div.style.display='block';
+               fade.style.display='block';
+           }
+        }
+         window.addEventListener('load', hi);
+    </script>
+    <script src="./javascripts/login.js"></script>
+</body>
+
+</html>

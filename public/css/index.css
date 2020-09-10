@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial,"標楷體";
+}
+.wrap{
+    min-width: 1150px;
+}
+.banner img{
+    width: 100%;
+    position: relative;
+}
+.bannertxt{
+    position: absolute;
+    top: 160px;
+    left: 5%;
+    width: 40%;
+}
+.bannertxt h1{
+    font-family: arial;
+    font-size: 80px;
+    line-height: 70px;
+    color: #3273C9;
+}
+.bannertxt h1 span{
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 120px;
+}
+.bannertxt p{
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-width: 450px;
+}
+.bannertxt input{
+    height: 32px;
+    width: 300px;
+    opacity: .7;
+    border: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding-left: 20px;
+    font-style: italic;
+}
+.bannertxt input:focus{
+    outline: none;
+}
+.banner-button{
+    position: relative;
+    display: inline-block;
+}
+.banner-button .button-position{
+    position: absolute;
+    top: 0;
+    right: -80px;
+}
+.banner-button button{
+    border: none;
+    height: 32px;
+    width: 80px;
+    color: #fff;
+    background-color: #3534C9;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+.banner-button button:hover{
+    background-color: #2fb3d1;
+}
+.banner-button button:focus{
+    outline: none;
+}
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: right;
+    z-index: 10;
+}
+.nav-bg img{
+    width: 100%;
+    vertical-align: top;
+}
+nav{
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.nav .logo img{
+    width: 100px;
+    vertical-align: middle;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+.nav a{
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 20px;
+    color: #000;
+    transform: translateY(0);
+    transition: .3s;
+}
+.nav a:hover{
+    transform: translateY(-3px);
+    color: #2fb3d1;
+}
+.nav button{
+    height: 25px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: #3534C9;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transform: translateY(0);
+    transition: .3s;
+}
+.nav button:hover{
+    transform: translateY(-3px);
+    background-color: #2fb3d1;
+    color: #fff;
+}
+.nav button:focus{
+    outline: none;
+}
+.experience{
+    display: flex;
+    width: 95%;
+    margin: auto;
+    margin-top: 60px;
+}
+.experience .item{
+    width: calc(100%/3);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    position: relative;
+}
+.experience .item:hover{
+    animation : shake .5s 1;
+}
+@keyframes  shake  {
+    15% { transform:  translateX(5px); }
+    40% { transform:  translateX(-5px); }
+    65% { transform:  translateX(2px); }
+    85% { transform:  translateX(-2px); }
+    100% { transform:  translateX(0px); }
+}
+.experience .item img{
+    width: 120px;
+}
+.experience .item p{
+    line-height: 1.5;
+}
+.free{
+    width: 100%;
+    margin: auto;
+    margin-top: 80px;
+    display: flex;
+}
+.free .free-left{
+    width: 50%;
+}
+.free .free-left img{
+    width: 800px;
+    margin-left: -50px;
+}
+.free .free-position{
+    position: relative;
+}
+.free .freetxt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    margin-top: -58px;
+    margin-left: -150px;
+    color: #002985;
+}
+.free .free-right{
+    z-index: 1;
+    width: 50%;
+}
+.free .free-right img{
+    width: 100%;
+}
+.footer{
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+}
+.footer img{
+    width: 100%;
+    vertical-align: middle;
+}
+.footer .item-position{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.footer .item-right{
+    width: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .item-left{
+    width: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer p{
+    font-size: 14px;
+}
