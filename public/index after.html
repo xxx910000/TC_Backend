@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index after.css">
+    <link rel="stylesheet" href="css/setgoal.css">
     <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script> -->
     <title>index after</title>
 </head>
 <body>
@@ -17,26 +18,86 @@
                     <div class="left-member" id="left-member">
                         <img src="image/member.png" alt="member">
                     </div>
-                    積分 : <span id="score">250</span><br>
-                    <img src="image/money.png" alt="money"> : <span id="money">150</span>
+                    <div>
+                        積分 : <span id="score">250</span><br>
+                    </div>
+                    <div>
+                        <img src="image/money.png" alt="money"> : <span id="money">150</span>
+                    </div>
                 </div>
                 <div class="right">
-                    <p>
+                    <h1>
                     目標設定 : 
-                    </p>
+                    </h1>
+                    <div class="goal">
+                        每天一小時<br>
+                        <a href='javascript:void(0)' id='linkbt'><button>設定目標</button></a>
+                    </div>
+                    <div id='login'>
+                        <div class="setgoal-img">
+                            <img src="image/login.png" alt="setgoal">
+                        </div>
+                        <div class="setgoal-position">
+                            <h1>設定目標 !</h1>
+                                <div class="setgoal-input">
+                                    <div>
+                                        <input type="checkbox" name="" id="">星期一
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="" id="">星期二
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="" id="">星期三
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="" id="">星期四
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="" id="">星期五
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="" id="">星期六
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="" id="">星期日
+                                    </div>
+                                </div>
+                                <div class="setgoal-button">
+                                    <button class="yesbt">確定</button>
+                                    <a href='javascript:void(0)' id='closebt' class='color'><button class="nobt">取消</button></a>
+                                </div>
+                            
+                        </div> 
+                    </div>
+                    <div>
+                        每日目標完成度
+                    </div>
                 </div>
             </div>
             <div class="bottom">
                 <div class="left">
-                    <img src="image/king.png" alt="king">排行榜<br>
-                    <img src="image/member.png" alt="member">1.USERNAME<br>
-                    <img src="image/member2.png" alt="member2">2.Abc<br>
-                    <img src="image/member3.png" alt="member3">3.Xyxy<br>
-                    <button>更多</button>
+                    <div class="first-img">
+                        <img src="image/king.png" alt="king"> 排行榜<br>
+                    </div>
+                    <div class="rank">
+                        <div>
+                            <img src="image/member.png" alt="member"> 1.USERNAME<br>
+                        </div>
+                        <div>
+                            <img src="image/member2.png" alt="member2"> 2.Abc<br>
+                        </div>
+                        <div>
+                            <img src="image/member3.png" alt="member3"> 3.Xyxy<br>
+                        </div>
+                    </div>
+                    <div class="button-center">
+                        <button>更多</button>
+                    </div>
+                    
                 </div>
                 <div class="right">
                     <p>
-                    已解鎖課程寵物 : <br>
+                    <span class="right-txt">已解鎖課程寵物 : </span><br>
                     <img src="image/penguin.png" alt="penguin">
                     <img src="image/egg.png" alt="egg">
                     <img src="image/egg.png" alt="egg">
@@ -67,6 +128,33 @@
             </div>
         </div>
     </div>
+    <div id='fade'></div>
+    <script type='text/javascript'>
+        function hi(){
+           var linkbt=document.getElementById('linkbt');
+           var login=document.getElementById('login');
+           var fade=document.getElementById('fade');
+           var closebt=document.getElementById('closebt');
+           var register=document.getElementById('register');
+           var register_div=document.getElementById('register_div');
+           linkbt.onclick=function(){
+            login.style.display='block';
+             fade.style.display='block';
+           }
+           closebt.onclick=function(){
+            login.style.display='none';
+             fade.style.display='none';
+           }
+           register.onclick=function(){
+  
+               login.style.display='none';
+               fade.style.display='none';
+               register_div.style.display='block';
+               fade.style.display='block';
+           }
+        }
+         window.addEventListener('load', hi);
+    </script>
     <script src="./javascripts/front-side.js"></script>
 </body>
 

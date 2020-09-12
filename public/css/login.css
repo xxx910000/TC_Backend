@@ -73,8 +73,16 @@
   position: relative;
   display: inline-block;
 }
+.login-position .register-account{
+  margin-top: 10px;
+  font-size: 16px;
+}
 .login-position .account div{
-  line-height: 1.8;
+  line-height: 2;
+}
+.login-position .register-account div{
+  text-align: right;
+  margin-right: 40px;
 }
 .login-position .account input{
   height: 22px;
@@ -100,6 +108,10 @@
 .login-position .login-button{
   margin-top: 25px;
 }
+.login-position .register-button{
+  margin-top: 10px;
+  padding-right: 30px;
+}
 .login-position .login-button button{
   height: 35px;
   width: 80px;
@@ -111,6 +123,10 @@
   cursor: pointer;
   transform: translateY(0);
   transition: .3s;
+}
+.login-position .register-button button{
+  height: 32px;
+  width: 72px;
 }
 .login-position .login-button .yesbt{
   margin-right: 5px;
@@ -129,7 +145,7 @@
 .login-position p{
   margin-top: 20px;
   font-size: 18px;
-  text-align: left;
+  text-align: center;
   color: #808080;
 }
 .login-position p a{

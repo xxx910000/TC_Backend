@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.personal{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+.personal .personal-img img{
+    width: 150px;
+}
+.personal .personal-txt{
+    width: 100%;
+    padding: 0 20px;
+}
+.personal .personal-txt .name{
+    font-size: 20px;
+}
+.personal .personal-txt .id{
+    font-size: 14px;
+}
+.personal .personal-txt .fight{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px 0;
+}
+.personal .personal-txt .fight::after{
+    content: "";
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+.personal .personal-txt .money{
+    font-size: 18px;
+    display: flex;
+    padding: 10px 0;
+}
+.personal .personal-txt .money .money-position{
+    width: 50%;
+}
+.personal .personal-txt .money img{
+    width: 25px;
+    vertical-align: bottom;
+}
+.personal .personal-txt .icon{
+    text-align: right;
+}
+.pet{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 30px;
+}
+.pet .pet-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid #ddd;
+    padding: 20px 40px;
+    border-radius: 20px;
+    height: 250px;
+}
+.pet .pet-name img{
+    width: 150px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 15px;
+}
+.pet .pet-state{
+    border: 2px solid #ddd;
+    padding: 20px 40px;
+    border-radius: 20px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.pet .pet-state img{
+    width: 100px;
+    padding: 10px;
+}
+.pet .pet-state .pet-item{
+    display: flex;
+}
+.pet .pet-state .pet-item .item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 0 10px;
+}
+.personal-button{
+    height: 30px;
+    width: 120px;
+    border-radius: 20px;
+    background-color: #3534C9;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+.personal-button:hover{
+    background-color: #2fb3d1;
+}
+.personal-button:focus{
+    outline: none;
+}

@@ -1,0 +1,75 @@
+#fade{
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: .6;
+  z-index: 20;
+}
+#login{
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  height: 60%;
+  background: transparent;
+  z-index: 30;
+  border-radius:10px;
+  min-width: 630px;
+}
+.setgoal-img img{
+  width: 100%;
+}
+.setgoal-position{
+  position: absolute;
+  top: 30px;
+  left: calc(50% - 200px);
+  width: 400px;
+  font-size: 30px;
+  display: inline-block;
+  text-align: center;
+}
+.setgoal-position h1{
+  text-align: center;
+  padding-top: 20px;
+  font-size: 25px;
+  color: #187898;
+  font-weight: 900;
+}
+.setgoal-position .setgoal-input{
+  margin-top: 10px;
+  font-size: 20px;
+}
+.setgoal-position .setgoal-button{
+  margin-top: 0px;
+}
+.setgoal-position .setgoal-button button{
+  height: 32px;
+  width: 72px;
+  border-radius: 20px;
+  border: none;
+  background-color: #fff;
+  color: #2fb3d1;
+  font-weight: bold;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: .3s;
+}
+.setgoal-position .setgoal-button .yesbt{
+  margin-right: 5px;
+}
+.setgoal-position .setgoal-button .nobt{
+  margin-left: 5px;
+}
+.setgoal-position .setgoal-button button:hover{
+  transform: translateY(-3px);
+  background-color: #2fb3d1;
+  color: #fff;
+}
+.setgoal-position .setgoal-button button:focus{
+  outline: none;
+}

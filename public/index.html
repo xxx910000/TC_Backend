@@ -136,7 +136,7 @@
                 </div>
                 <a href="#" class="forget" id="forget">忘記密碼</a>
                 <div class="login-button">
-                    <button class="yesbt" onclick="login()">login</button>
+                    <button class="yesbt" onclick="login()">登入</button>
                     <a href='javascript:void(0)' id='closebt' class='color'><button class="nobt">取消</button></a>
                 </div>
                 <p>
@@ -152,8 +152,8 @@
             <img src="image/login.png" alt="login">
         </div>
         <div class="login-position">
-            <h1>您好 歡迎註冊TC-teaching！</h1>
-            <div class="account">
+            <h1>註冊TC-teaching！</h1>
+            <div class="register-account account">
                 <div>
                     帳號 :
                     <input type="text" id="account_register" onKeyUp="value=value.replace(/[\W]/g,'')">
@@ -170,9 +170,13 @@
                     姓名 :
                     <input type="text" id="username_register">
                 </div>
+                <div>
+                    E-mail :
+                    <input type="email">
+                </div>
 
-                <div class="login-button">
-                    <button class="yesbt" onclick="register()">register</button>
+                <div class="login-button register-button">
+                    <button class="yesbt" onclick="register()">註冊</button>
                     <a href='javascript:void(0)' class='color'><button class="nobt" onclick="$('#register_div').hide();$('#fade').hide();" >取消</button></a>
                 </div>
                 

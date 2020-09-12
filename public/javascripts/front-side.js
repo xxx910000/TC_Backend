@@ -1,6 +1,7 @@
 checkLogin();
 getUserData();
 getGoods("food");
+getpvpData();
 
 function checkLogin(){
     if (!$.cookie('account') || $.cookie('account') == "null") {
@@ -41,4 +42,17 @@ function getGoods(type){
             });   
         }
     });
+}
+
+//取得戰績資料
+function getpvpData(){
+    var url = "/pvp?account="+$.cookie('account');
+    $.get(url,function(res){
+        if(res.status==0){
+            
+            $('#winning').text('勝利 '+res.data.winning);
+            $('#fail').text('失敗 '+res.data.fail);
+            $('#rate').text('勝率 '+res.data.rate+'%');
+        }
+    })
 }

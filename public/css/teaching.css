@@ -108,3 +108,12 @@
 .right img{
     width: 600px;
 }
+.right .offer-position{
+    position: relative;
+}
+.right .offer-position .offer{
+    margin-top: 20px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
