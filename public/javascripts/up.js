@@ -103,17 +103,17 @@ function uploadPhoto(){
     }
     var u_file = document.getElementById('photo');
 
-    if(!/.(gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG)$/.test(img.value)){
+    if(!/.(gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG)$/.test(u_file.value)){
         alert('圖片類型不正確！');
         return;
     }
-    
+
     var formData = new FormData();
-    formData.append('file',u_file.files[i]);
+    formData.append('file',u_file.files[0]);
     formData.append('account',$.cookie('account'));
 
     $.ajax({
-        url:"/upload",
+        url:"/upload/photo",
         type:"PATCH",
         data:formData,
         processData:false,
@@ -121,9 +121,10 @@ function uploadPhoto(){
         success: function(res){
             if(res.status==0){
                 alert("上傳成功！");
-                $('#left-member').load("index after.html",function(){
-                    getUserPhoto();
-                })
+                var f_filename = String(u_file.files[0].name);
+                var src = "./upload/"+f_filename;
+                $('#userPhoto').attr('src',src);
+                
             }
         },
         error: function(err){
@@ -132,3 +133,4 @@ function uploadPhoto(){
     });
 
 }
+

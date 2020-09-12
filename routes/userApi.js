@@ -67,4 +67,21 @@ router.post('/',function(req,res){
   });
 });
 
+//忘記密碼
+router.post('/forgetpsw', function (req, res) {
+
+    Model.updateOne({ account: req.body.account },{ password: req.body.password}, function (err, data) {
+        if (data == null) {
+            res.json({ "status": 1, "msg": "帳號錯誤!" });
+        }
+        if(err){
+            res.json({"status":1,"msg":"error"});
+          }
+          else{
+            res.json({"status":0,"msg":"success","data":data});
+          }
+    });
+  });
+
+
 module.exports = router;

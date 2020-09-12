@@ -60,4 +60,28 @@ function logout() {
     location.href = '../index.html';
 }
 
+//忘記密碼
+function forgetpsw() {
+    var _account = $('#account_forget').val();
+    var _password = $('#password_forget').val();
+    var _confirmpsd = $('#confirmpsd_forget').val();
+    if (!_account || !_password) {
+        alert('請輸入帳號密碼!');
+    }
+    else if (_password != _confirmpsd) {
+        alert('確認密碼不相同!');
+    }
+    else {
+        $.post("/user/forgetpsw",
+            { 'account': _account, 'password': _password }, function (res) {
+                if (res.status == 1) {
+                    alert(res.msg);
+                }
+                else {
+                    alert('更改成功!');
+                    location.href = '../index.html';
+                }
+            });
+    }
+}
 

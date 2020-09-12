@@ -33,6 +33,18 @@
   border-radius:10px;
   min-width: 630px;
 }
+#forget_div{
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  height: 60%;
+  background: transparent;
+  z-index: 30;
+  border-radius:10px;
+  min-width: 630px;
+}
 .login{
   position: relative;
 }

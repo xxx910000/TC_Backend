@@ -62,18 +62,19 @@ router.delete("/",function(req,res,next){
 });
 
 //上傳使用者相片
-router.patch("/", upload.single("photo"), function (req, res, next) {
+router.patch("/photo", upload.single("file"), function (req, res, next) {
 
-    var update = {
-        photo:req.body.filename,
-    }
-    userModel.updateOne({ account: req.query.account },update,{upsert: true}, function (err, data) {
-        if(err){
-            res.json({"status":1,"msg":"error"});
-          }
-          else{
-            res.json({"status":0,"msg":"success","data":data});
-          }
+    userModel.updateOne({ account: req.body.account },{photo:req.file.filename},{upsert: true}, function (err,data) {
+        // data.photo.push(req.file.filename);
+        // data.markModified('photo');
+        // data.save(function(err){
+            if(err){
+                res.json({"status":1,"msg":"error"});
+              }
+              else{
+                res.json({"status":0,"msg":"success","data":data});
+              }
+        // })       
     });
 });
 

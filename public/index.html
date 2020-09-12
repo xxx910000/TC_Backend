@@ -134,7 +134,7 @@
                     密碼 :
                     <input type="password" id="password">
                 </div>
-                <a href="#" class="forget">忘記密碼</a>
+                <a href="#" class="forget" id="forget">忘記密碼</a>
                 <div class="login-button">
                     <button class="yesbt" onclick="login()">login</button>
                     <a href='javascript:void(0)' id='closebt' class='color'><button class="nobt">取消</button></a>
@@ -180,6 +180,37 @@
             
         </div> 
     </div>
+
+    <div id='forget_div' class="login">
+        <div class="login-img">
+            <img src="image/login.png" alt="login">
+        </div>
+        <div class="login-position">
+            <h1>您好 歡迎回來TC-teaching！</h1>
+            <div class="account">
+                <div>
+                    帳號 :
+                    <input type="text" id="account_forget" onKeyUp="value=value.replace(/[\W]/g,'')">
+                </div>
+                <div>
+                    密碼 :
+                    <input type="password" id="password_forget">
+                </div>
+                <div>
+                    確認密碼 :
+                    <input type="password" id="confirmpsd_forget">
+                </div>
+                
+                <div class="login-button">
+                    <button class="yesbt" onclick="forgetpsw()">送出</button>
+                    <a href='javascript:void(0)' id='closebt' class='color'><button class="nobt" onclick="$('#forget_div').hide();$('#fade').hide();" >取消</button></a>
+                </div>
+                
+            </div>
+            
+        </div> 
+    </div>
+
     <div id='fade'></div>
 
     <script type='text/javascript'>
@@ -190,6 +221,8 @@
            var closebt=document.getElementById('closebt');
            var register=document.getElementById('register');
            var register_div=document.getElementById('register_div');
+           var forget=document.getElementById('forget');
+           var forget_div=document.getElementById('forget_div');
            linkbt.onclick=function(){
             login.style.display='block';
              fade.style.display='block';
@@ -205,6 +238,13 @@
                register_div.style.display='block';
                fade.style.display='block';
            }
+           forget.onclick=function(){
+  
+            login.style.display='none';
+            fade.style.display='none';
+            forget_div.style.display='block';
+            fade.style.display='block';
+            }
         }
          window.addEventListener('load', hi);
     </script>
