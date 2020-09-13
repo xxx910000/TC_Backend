@@ -10,6 +10,8 @@ var uploadSchema = new mongoose.Schema({
     filename: String,
     path: String,
     size: Number
+},{
+    timestamps:true
 });
 
 uploadSchema.set('collection','upload');

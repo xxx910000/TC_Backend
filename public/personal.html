@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/personal.css">
+    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -13,13 +15,13 @@
                 <img src="image/member.png" alt="member">
             </div>
             <div class="personal-txt">
-                <div class="name">USERNAME</div>
+                <div class="name" id="username">USERNAME</div>
                 <div class="id">ID : 1234</div>
                 <div class="fight">
                    <span>戰績 : </span><span id="winning">勝利 5</span><span id="fail">失敗 5</span><span id="rate">勝率 50%</span><button class="personal-button">個人圖像分析</button>
                 </div>
                 <div class="money">
-                    <div class="money-position">積分 : XXX</div>
+                    <div class="money-position">積分 : <span id="score">XXX</span></div>
                     <div class="money-position">
                         <img src="image/money.png" alt="money"> : <span id="money">XXX</span>
                     </div>

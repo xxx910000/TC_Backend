@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/index after.css">
     <link rel="stylesheet" href="css/setgoal.css">
     <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <title>index after</title>
 </head>
 <body>
@@ -41,29 +41,29 @@
                             <h1>設定目標 !</h1>
                                 <div class="setgoal-input">
                                     <div>
-                                        <input type="checkbox" name="" id="">星期一
+                                        <input type="checkbox" name="week" id="" value="星期一">星期一
                                     </div>
                                     <div>
-                                        <input type="checkbox" name="" id="">星期二
+                                        <input type="checkbox" name="week" id="" value="星期二">星期二
                                     </div>
                                     <div>
-                                        <input type="checkbox" name="" id="">星期三
+                                        <input type="checkbox" name="week" id="" value="星期三">星期三
                                     </div>
                                     <div>
-                                        <input type="checkbox" name="" id="">星期四
+                                        <input type="checkbox" name="week" id="" value="星期四">星期四
                                     </div>
                                     <div>
-                                        <input type="checkbox" name="" id="">星期五
+                                        <input type="checkbox" name="week" id="" value="星期五">星期五
                                     </div>
                                     <div>
-                                        <input type="checkbox" name="" id="">星期六
+                                        <input type="checkbox" name="week" id="" value="星期六">星期六
                                     </div>
                                     <div>
-                                        <input type="checkbox" name="" id="">星期日
+                                        <input type="checkbox" name="week" id="" value="星期日">星期日
                                     </div>
                                 </div>
                                 <div class="setgoal-button">
-                                    <button class="yesbt">確定</button>
+                                    <button class="yesbt" onclick="saveGoalData()">確定</button>
                                     <a href='javascript:void(0)' id='closebt' class='color'><button class="nobt">取消</button></a>
                                 </div>
                             

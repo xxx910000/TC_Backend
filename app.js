@@ -14,6 +14,7 @@ var usersRouter = require('./routes/userApi');
 var shopRouter = require('./routes/shopApi');
 var uploadRouter = require('./routes/uploadApi');
 var pvpRouter = require('./routes/pvpApi');
+var courseRouter = require('./routes/courseApi');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use('/user',usersRouter);
 app.use('/shop',shopRouter);
 app.use('/upload',uploadRouter);
 app.use('/pvp',pvpRouter);
+app.use('/course',courseRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
