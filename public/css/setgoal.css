@@ -44,6 +44,12 @@
   margin-top: 10px;
   font-size: 20px;
 }
+.setgoal-position .setgoal-input label{
+  display: none;
+}
+input:checked + label{
+  display: block;
+}
 .setgoal-position .setgoal-button{
   margin-top: 0px;
 }

@@ -61,6 +61,17 @@
 .personal .personal-txt .icon{
     text-align: right;
 }
+.personal .personal-txt .icon i{
+    font-size: 25px;
+    color: #3534C9;
+    margin-left: 15px;
+    cursor: pointer;
+    transform: translateY(0);
+    transition: .3s;
+}
+.personal .personal-txt .icon i:hover{
+    transform: translateY(-4px);
+}
 .pet{
     display: flex;
     justify-content: space-between;

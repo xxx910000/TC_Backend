@@ -94,7 +94,7 @@
     cursor: pointer;
 }
 .right form input:hover{
-    color: springgreen;
+    background-color: #2fb3d1;
 }
 .right form input:focus{
     outline: none;
@@ -112,8 +112,23 @@
     position: relative;
 }
 .right .offer-position .offer{
-    margin-top: 20px;
     position: absolute;
     top: 100%;
     right: 0;
+}
+.blue-btn{
+    height: 25px;
+    width: 80px;
+    border-radius: 20px;
+    background-color: #3534C9;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+.blue-btn:hover{
+    background-color: #2fb3d1;
+}
+.blue-btn:focus{
+    outline: none;
 }

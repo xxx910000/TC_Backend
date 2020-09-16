@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/teaching.css">
+    <link rel="stylesheet" href="css/upload.css">
     <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>-->
 </head>
 <body>
     <div class="wrap">
@@ -15,7 +16,7 @@
                 <div class="left-title">
                     課程章節
                 </div>
-                <!-- <div class="left-item">
+                 <div class="left-item">
                     <div class="left-video">
                         <div class="left-img1"><img src="image/video2.png" alt="video2"></div>
                         <div class="left-txt">APP Inventor<br>第一章</div>
@@ -44,7 +45,7 @@
                         <div class="left-img2"><img src="image/ppt3.png" alt="ppt3"></div>
                         <div class="left-txt">APP Inventor<br>第三章<br><img src="image/money.png" alt="money"> 70</div>
                     </div>
-                </div> -->
+                </div> 
             </div>
         </div>
         <div class="right">
@@ -74,8 +75,60 @@
                     由abc提供
                 </div>
             </div>
+            <div class="upload-btn">
+                <a href='javascript:void(0)' id='linkbt'><button class="blue-btn">上傳教材</button></a>
+            </div>
+            <div id='login'>
+                <div class="upload-img">
+                    <img src="image/login.png" alt="upload">
+                </div>
+                <div class="upload-position">
+                    <h1>感謝您提供的教材 !</h1>
+                        <div class="upload">
+                            <div class="upload-video">
+                                app inventor1.mp4 <button class="blue-btn">選擇影片</button>
+                            </div>
+                            <div class="upload-ppt">
+                                app inventor1.pptx <button class="blue-btn">選擇ppt</button>
+                            </div>
+                            <span class="upload-txt">請稍等審核完成</span>
+                        </div>
+                        <div class="upload-button">
+                            <button class="yesbt" onclick="saveGoalData()">確定</button>
+                            <a href='javascript:void(0)' id='closebt' class='color'><button class="nobt">取消</button></a>
+                        </div>
+                    
+                </div> 
+            </div>
         </div>
     </div>
+    <div id='fade'></div>
+    <script type='text/javascript'>
+        function hi(){
+           var linkbt=document.getElementById('linkbt');
+           var login=document.getElementById('login');
+           var fade=document.getElementById('fade');
+           var closebt=document.getElementById('closebt');
+           var register=document.getElementById('register');
+           var register_div=document.getElementById('register_div');
+           linkbt.onclick=function(){
+            login.style.display='block';
+             fade.style.display='block';
+           }
+           closebt.onclick=function(){
+            login.style.display='none';
+             fade.style.display='none';
+           }
+           register.onclick=function(){
+  
+               login.style.display='none';
+               fade.style.display='none';
+               register_div.style.display='block';
+               fade.style.display='block';
+           }
+        }
+         window.addEventListener('load', hi);
+    </script>
     <script src="./javascripts/front-side.js"></script>
 </body>
 </html>

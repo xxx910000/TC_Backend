@@ -38,8 +38,32 @@
 .container .top .right{
     border:2px solid #AAA;
     border-radius: 20px;
-    padding: 20px;
+    padding: 0 20px;
     width: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container .top .right .goal-border{
+    border:2px solid #AAA;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+.container .top .right .goal-position{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .top .right table{
+    padding-left: 20px;
+    text-align: center;
+}
+.container .top .right table td{
+    height: 27px;
+    width: 80px;
+}
+.container .top .right table img{
+    width: 25px;
 }
 .container .top .right .goal button{
     height: 25px;
@@ -56,6 +80,24 @@
 }
 .container .top .right .goal button:focus{
     outline: none;
+}
+.container .top .right .plan-position{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.container .top .right .plan{
+    width: 530px;
+    height: 35px;
+    background-color: #DDD;
+    border-radius: 20px;
+}
+.container .top .right .plan-color{
+    width: 310px;
+    height: 35px;
+    background: linear-gradient(to right, #0081EA, #7FFFE0);
+    border-radius: 20px;
 }
 .container .bottom{
     display: flex;
