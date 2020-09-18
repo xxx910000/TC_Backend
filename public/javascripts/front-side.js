@@ -21,6 +21,9 @@ function getUserData(){
             var score = $('#score').text(res.data.score);
             var money = $('#money').text(res.data.money);
             $('#money_txt').text(res.data.money);
+            var a = res.data.goal[0].list
+            var b = JSON.parse(a)
+            console.log(b[0].week)
         }
     })
 }
@@ -61,20 +64,25 @@ function getPvpData(){
 //儲存每日目標資料
 function saveGoalData(){
     var week = document.getElementsByName('week');
+    var hour = document.getElementsByName('hour');
     var goal = new Array();
     for(var i =0;i<week.length;i++){
         if(week[i].checked){
-            goal.push(week[i].value);
+            var goal_ ={week:week[i].value,
+                hour:hour[i].value};
+            goal.push(goal_); 
         }
     }
-
     var url = "/user/goal?account="+$.cookie('account');
 
     $.ajax({
         url:url,
         type:"PATCH",
-        data:{goal:goal},
-        traditional:true,
+        data:{list:JSON.stringify(goal)},
+        //traditional:true,
+        //processData:false,
+        //contentType:"json/application",
+        //dataType: "json",
         success: function(res){
             if(res.status==0){
                 alert("更改成功！");

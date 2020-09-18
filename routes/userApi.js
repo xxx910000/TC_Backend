@@ -86,7 +86,7 @@ router.post('/forgetpsw', function (req, res) {
 //儲存每日目標資料
 router.patch('/goal',function(req,res){
 
-  Model.updateOne({account: req.query.account},{goal:req.body.goal},{upsert: true},function(err,data){
+  Model.updateOne({account: req.query.account},{goal:req.body},{upsert: true},function(err,data){
     if(err){
       res.json({"status":1,"msg":"error"});
     }
@@ -95,5 +95,7 @@ router.patch('/goal',function(req,res){
     }
   })
 })
+
+
 
 module.exports = router;
