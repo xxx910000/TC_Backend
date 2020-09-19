@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/test.css">
+    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -35,7 +37,7 @@
             </div>
         </div>
         <div class="right">
-            <div class="test">
+            <!-- <div class="test">
                 <span class="question">題目 : Lorem ipsum dolor sit amet consectetur adipisicing elit?</span><br>
                 [A] Lorem ipsum dolor sit, amet consectetur.<button>A</button><br>
                 [B] Lorem ipsum dolor sit, amet consectetur.<button>B</button><br>
@@ -55,8 +57,12 @@
                 [B] Lorem ipsum dolor sit, amet consectetur.<button>B</button><br>
                 [C] Lorem ipsum dolor sit, amet consectetur.<button>C</button><br>
                 [D] Lorem ipsum dolor sit, amet consectetur.<button>D</button>
-            </div>
+            </div> -->
+            
         </div>
+        <div><button onclick="handAns()">交卷</button></div>
     </div>
+    <script src="./javascripts/front-side.js"></script>
+    <script>getTestData()</script>
 </body>
 </html>
