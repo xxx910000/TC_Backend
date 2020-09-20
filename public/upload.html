@@ -4,43 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="css/upload.css">
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>-->
     <title>Document</title>
-
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        .wrap{
-            margin-top: 150px;
-        }
-    </style>
-
 </head>
 <body>
     <script src="header-teacher.js"></script>
+
+
     <div class="wrap">
-        <div>
-            <input id='u_file' type="file" name="file" multiple>
+        <div class="upload">
+            <h2>感謝您提供的教材 !</h2>
+            <div class="uploadbtn">
+                <div class="upload-position">
+                    <div class="upload-left">
+                        <div class="upload-video">
+                            <div>影片 :<input id='u_file' type="file" name="file" multiple></div>
+                            <table id="filelist" border="1">
+                                <tr>
+                                    <td>filename</td>
+                                    <td>size</td>
+                                    <td>path</td>
+                                    <td>encoding</td>
+                                    <td>mimetype</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="upload-ppt">
+                            <div>簡報 :<input id='u_file' type="file" name="file" multiple></div>
+                            <table id="filelist" border="1">
+                                <tr>
+                                    <td>filename</td>
+                                    <td>size</td>
+                                    <td>path</td>
+                                    <td>encoding</td>
+                                    <td>mimetype</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="upload-txt">
+                        <div>
+                            主題分類<br>
+                            <select name="" id="">
+                                <option value="">stretch</option>
+                                <option value="">app inventor</option>
+                                <option value="">html & css</option>
+                                <option value="">javascript</option>
+                            </select>
+                        </div>
+                        <div>
+                            簡介<br><textarea name="" id="" cols="30" rows="10">123123</textarea>
+                        </div>
+                    </div>
+                </div>
+                <button class="commonbtn mag20pxbtn" onclick="upload()">上傳</button>
+            </div>
         </div>
-        <button class="commonbtn mag20pxbtn" onclick="upload()">上傳</button>
-        <table id="filelist" border="1">
-            <tr>
-                <td>filename</td>
-                <td>size</td>
-                <td>path</td>
-                <td>encoding</td>
-                <td>mimetype</td>
-            </tr>
-        </table>
         <!-- <form action="/upload" method="post" enctype="multipart/form-data">
             <input name="u_file" type="file" />
             <img src="" alt="">
             <button type="submit" >上傳</button>
             </form> -->
-        <br><br><br><hr><br><br><br> 
+            <hr>
         <div class="left-member" id="left-member">
             <img src="image/member.png" alt="member" id="userPhoto" height="100px" width="100px">
         </div>
@@ -49,6 +75,8 @@
         </div>
         <button class="commonbtn mag20pxbtn" onclick="uploadPhoto()">上傳</button>
     </div>
+
+
     <script src="./javascripts/up.js"></script>
     <script src="footer.js"></script>
 </body>

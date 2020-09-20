@@ -1,85 +1,73 @@
-#fade{
-  display: none;
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  opacity: .6;
-  z-index: 20;
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-#login{
-  display: none;
-  position: fixed;
-  top: 20%;
-  left: 25%;
-  width: 50%;
-  height: 60%;
-  background: transparent;
-  z-index: 30;
-  border-radius:10px;
-  min-width: 630px;
+.wrap{
+  margin-top: 150px;
 }
-.upload-img img{
-  width: 100%;
+.upload{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.upload-position{
-  position: absolute;
-  top: 30px;
-  left: calc(50% - 200px);
-  width: 400px;
-  display: inline-block;
+.upload h2{
   text-align: center;
-}
-.upload-position h1{
-  text-align: center;
-  padding-top: 20px;
   font-size: 25px;
   color: #187898;
   font-weight: 900;
 }
-.upload-position .upload-button{
-  margin-top: 0px;
-}
-.upload-position .upload-button button{
-  height: 32px;
-  width: 72px;
-  border-radius: 20px;
-  border: none;
-  background-color: #fff;
-  color: #2fb3d1;
-  font-weight: bold;
+.upload input{
   cursor: pointer;
-  transform: translateY(0);
-  transition: .3s;
+  margin-left: 10px;
 }
-.upload-position .upload-button .yesbt{
-  margin-right: 5px;
+.upload .uploadbtn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border:2px solid #AAA;
+  border-radius: 20px;
+  width: 700px;
+  margin: 10px 0 30px 0;
 }
-.upload-position .upload-button .nobt{
-  margin-left: 5px;
+.upload .upload-position{
+  display: flex;
+  justify-content: space-evenly;
 }
-.upload-position .upload-button button:hover{
-  transform: translateY(-3px);
+.upload .upload-position .upload-left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 250px;
+}
+.upload .upload-position .upload-txt{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 250px;
+}
+.upload button{
+    height: 25px;
+    width: 80px;
+    border-radius: 20px;
+    background-color: #3534C9;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px 0;
+    transform: translateY(0);
+    transition: .3s;
+}
+.upload button:hover{
   background-color: #2fb3d1;
-  color: #fff;
+  transform: translateY(-3px);
 }
-.upload-position .upload-button button:focus{
+.upload button:focus{
   outline: none;
 }
-.upload .upload-video{
-  margin-top: 30px;
-  font-size: 20px;
-}
-.upload .upload-ppt{
+.upload table{
+  color: #3534C9;
   margin-top: 10px;
-  font-size: 20px;
-}
-.upload .upload-txt{
-  display: block;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  font-size: 14px;
-  color: #666;
 }

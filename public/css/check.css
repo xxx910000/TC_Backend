@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.check{
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+.check table{
+    text-align: center;
+    border-collapse:collapse;
+}
+.check tr{
+    height: 30px;
+}
+.check td{
+    width: 100px;
+}

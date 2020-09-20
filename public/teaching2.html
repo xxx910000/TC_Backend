@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/teaching.css">
+    <link rel="stylesheet" href="css/upload.css">
     <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>-->
 </head>
@@ -18,7 +19,7 @@
                 </div>
                  <div class="left-item">
                     <div class="left-video">
-                        <div class="left-img1"><a href="#"><img src="image/class1.png" alt="class1"></a></div>
+                        <div class="left-img1"><a href="teaching.html"><img src="image/class1.png" alt="class1"></a></div>
                         <div class="left-txt">APP Inventor<br>第一章</div>
                     </div>
                     <div class="left-ppt">
@@ -28,7 +29,7 @@
                 </div>
                 <div class="left-item">
                     <div class="left-video">
-                        <div class="left-img1"><a href="#" id="a"><img id="change" src="image/class2op.png" alt="class2"></a></div>
+                        <div class="left-img1"><a href="#"><img src="image/class2.png" alt="class2"></a></div>
                         <div class="left-txt">APP Inventor<br>第二章</div>
                         
                     </div>
@@ -68,29 +69,10 @@
                 </form>
             </div>
             <div class="video-title"> 
-                APP Inventor<br>第一章
+                APP Inventor<br>第二章
             </div>
             <div class="offer-position">
-                <video id="myAudio" src="video/class1.mp4" controls></video>
-                <script>
-                    var aud = document.getElementById("myAudio");
-                    aud.onended = function() {
-                        document.getElementById("change").src="image/class2.png";
-                        document.getElementById("a").href="teaching2.html";
-                    };
-                </script>
-                <script>
-                    var aaa = document.getElementById("change");
-                    aaa.onclick = function() {
-                        var x = document.getElementById("change").getAttribute("src");
-                    if (x=="image/class2op.png"){
-                        alert("看完第一章才能解鎖喔");
-                    }
-                    else{
-                        alert("已成功解鎖 觀看第二章");
-                    }
-                    };
-                </script>
+                <video id="myAudio" src="video/class2.mp4" controls></video>
                 <div class="offer">
                     由abc提供
                 </div>

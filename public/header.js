@@ -3,7 +3,7 @@ document.writeln("<html lang=\'en\'>");
 document.writeln("<head>");
 document.writeln("    <meta charset=\'UTF-8\'>");
 document.writeln("    <meta name=\'viewport\' content=\'width=device-width, initial-scale=1.0\'>");
-document.writeln("    <script type=\'text/javascript\' src=\'jquery/jquery-3.3.1.min.js\'></script>");
+//document.writeln("    <script type=\'text/javascript\' src=\'jquery/jquery-3.3.1.min.js\'></script>");
 document.writeln("    <title>Document</title>");
 document.writeln("    <link rel=\'stylesheet\' href=\'css/header.css\'>");
 document.writeln("</head>");
