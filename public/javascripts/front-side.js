@@ -77,6 +77,7 @@ function saveGoalData(){
             goal.push(goal_); 
         }
     }
+
     var url = "/user/goal?account="+$.cookie('account');
 
     $.ajax({

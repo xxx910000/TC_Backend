@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index after.css">
+    <link rel="stylesheet" href="css/setgoal.css">
+    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>-->
+    <title>index after</title>
+</head>
+<body>
+    <script src="header-teacher.js"></script>
+    <div class="wrap">  
+        <div class="container">
+            <div class="top">
+                <div class="left">
+                    <span id="username">USERNAME</span>
+                    <div class="left-member" id="left-member">
+                        <img src="image/member.png" alt="member">
+                    </div>
+                    <div>
+                        積分 : <span id="score">250</span><br>
+                    </div>
+                    <div>
+                        <img src="image/money.png" alt="money"> : <span id="money">150</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <h2>目標設定 : </h2>
+                    <div class="goal-border">
+                        <div class="goal-position">
+                            <div class="goal">
+                                <a href='javascript:void(0)' id='linkbt'><button>設定目標</button></a>
+                            </div>
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td><img src="image/ok.png" alt="ok"></td>
+                                        <td><img src="image/ok.png" alt="ok"></td>
+                                        <td><img src="image/ok.png" alt="ok"></td>
+                                        <td><img src="image/ok.png" alt="ok"></td>
+                                        <td><img src="image/notok.png" alt="notok"></td>
+                                        <td><img src="image/notok.png" alt="notok"></td>
+                                        <td><img src="image/notok.png" alt="notok"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>星期一</td>
+                                        <td>星期二</td>
+                                        <td>星期三</td>
+                                        <td>星期四</td>
+                                        <td>星期五</td>
+                                        <td>星期六</td>
+                                        <td>星期日</td>
+                                    </tr>
+                                    <tr>
+                                        <td>?小時</td>
+                                        <td>?小時</td>
+                                        <td>?小時</td>
+                                        <td>?小時</td>
+                                        <td>?小時</td>
+                                        <td>?小時</td>
+                                        <td>?小時</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="plan-position">
+                            <div>每日目標<br>完成度</div>
+                            <div class="plan">
+                                <div class="plan-color"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='login'>
+                        <div class="setgoal-img">
+                            <img src="image/login.png" alt="setgoal">
+                        </div>
+                        <div class="setgoal-position">
+                            <h1>設定目標 !</h1>
+                                <div class="setgoal-input">
+                                    <div>
+                                        <input type="checkbox" name="week" id="check" value="星期一">星期一
+                                        <div id="tbox" style="display: none;">
+                                            <select name="" id="">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                            小時
+                                        </div>
+                                        <script>
+                                            $(document).ready(function() {
+                                            $('#check').click(function(){
+                                            if($("#tbox").css('display')=='none'){
+                                            $("#tbox").css("display","inline");
+                                            }else{
+                                            $("#tbox").css("display","none");
+                                            }
+                                            })
+                                            });
+                                        </script>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="week" id="check2" value="星期二">星期二
+                                        <div id="tbox2" style="display: none;">
+                                            <select name="" id="">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                            小時
+                                        </div>
+                                        <script>
+                                            $(document).ready(function() {
+                                            $('#check2').click(function(){
+                                            if($("#tbox2").css('display')=='none'){
+                                            $("#tbox2").css("display","inline");
+                                            }else{
+                                            $("#tbox2").css("display","none");
+                                            }
+                                            })
+                                            });
+                                        </script>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="week" id="check3" value="星期三">星期三
+                                        <div id="tbox3" style="display: none;">
+                                            <select name="" id="">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                            小時
+                                        </div>
+                                        <script>
+                                            $(document).ready(function() {
+                                            $('#check3').click(function(){
+                                            if($("#tbox3").css('display')=='none'){
+                                            $("#tbox3").css("display","inline");
+                                            }else{
+                                            $("#tbox3").css("display","none");
+                                            }
+                                            })
+                                            });
+                                        </script>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="week" id="check4" value="星期四">星期四
+                                        <div id="tbox4" style="display: none;">
+                                            <select name="" id="">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                            小時
+                                        </div>
+                                        <script>
+                                            $(document).ready(function() {
+                                            $('#check4').click(function(){
+                                            if($("#tbox4").css('display')=='none'){
+                                            $("#tbox4").css("display","inline");
+                                            }else{
+                                            $("#tbox4").css("display","none");
+                                            }
+                                            })
+                                            });
+                                        </script>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="week" id="check5" value="星期五">星期五
+                                        <div id="tbox5" style="display: none;">
+                                            <select name="" id="">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                            小時
+                                        </div>
+                                        <script>
+                                            $(document).ready(function() {
+                                            $('#check5').click(function(){
+                                            if($("#tbox5").css('display')=='none'){
+                                            $("#tbox5").css("display","inline");
+                                            }else{
+                                            $("#tbox5").css("display","none");
+                                            }
+                                            })
+                                            });
+                                        </script>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="week" id="check6" value="星期六">星期六
+                                        <div id="tbox6" style="display: none;">
+                                            <select name="" id="">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                            小時
+                                        </div>
+                                        <script>
+                                            $(document).ready(function() {
+                                            $('#check6').click(function(){
+                                            if($("#tbox6").css('display')=='none'){
+                                            $("#tbox6").css("display","inline");
+                                            }else{
+                                            $("#tbox6").css("display","none");
+                                            }
+                                            })
+                                            });
+                                        </script>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="week" id="check7" value="星期日">星期日
+                                        <div id="tbox7" style="display: none;">
+                                            <select name="" id="">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                            小時
+                                        </div>
+                                        <script>
+                                            $(document).ready(function() {
+                                            $('#check7').click(function(){
+                                            if($("#tbox7").css('display')=='none'){
+                                            $("#tbox7").css("display","inline");
+                                            }else{
+                                            $("#tbox7").css("display","none");
+                                            }
+                                            })
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="setgoal-button">
+                                    <button class="yesbt" onclick="saveGoalData()">確定</button>
+                                    <a href='javascript:void(0)' id='closebt' class='color'><button class="nobt">取消</button></a>
+                                </div>
+                            
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <div class="first-img">
+                        <img src="image/king.png" alt="king"> 排行榜<br>
+                    </div>
+                    <div class="rank">
+                        <div>
+                            <img src="image/member.png" alt="member"> 1.USERNAME<br>
+                        </div>
+                        <div>
+                            <img src="image/member2.png" alt="member2"> 2.Abc<br>
+                        </div>
+                        <div>
+                            <img src="image/member3.png" alt="member3"> 3.Xyxy<br>
+                        </div>
+                    </div>
+                    <div class="button-center">
+                        <button>更多</button>
+                    </div>
+                    
+                </div>
+                <div class="right">
+                    <p>
+                    <span class="right-txt">已解鎖課程寵物 : </span><br>
+                    <img src="image/penguin.png" alt="penguin">
+                    <img src="image/egg.png" alt="egg">
+                    <img src="image/egg.png" alt="egg">
+                    <img src="image/egg.png" alt="egg">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="footer.js"></script>
+    <div id='fade'></div>
+    <script type='text/javascript'>
+        function hi(){
+           var linkbt=document.getElementById('linkbt');
+           var login=document.getElementById('login');
+           var fade=document.getElementById('fade');
+           var closebt=document.getElementById('closebt');
+           var register=document.getElementById('register');
+           var register_div=document.getElementById('register_div');
+           linkbt.onclick=function(){
+            login.style.display='block';
+             fade.style.display='block';
+           }
+           closebt.onclick=function(){
+            login.style.display='none';
+             fade.style.display='none';
+           }
+           register.onclick=function(){
+  
+               login.style.display='none';
+               fade.style.display='none';
+               register_div.style.display='block';
+               fade.style.display='block';
+           }
+        }
+         window.addEventListener('load', hi);
+    </script>
+    <script src="./javascripts/front-side.js"></script>
+</body>
+
+</html>

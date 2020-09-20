@@ -6,34 +6,50 @@
     <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .wrap{
+            margin-top: 150px;
+        }
+    </style>
+
 </head>
 <body>
-    <div>
-        <input id='u_file' type="file" name="file" multiple>
+    <script src="header-teacher.js"></script>
+    <div class="wrap">
+        <div>
+            <input id='u_file' type="file" name="file" multiple>
+        </div>
+        <button class="commonbtn mag20pxbtn" onclick="upload()">上傳</button>
+        <table id="filelist" border="1">
+            <tr>
+                <td>filename</td>
+                <td>size</td>
+                <td>path</td>
+                <td>encoding</td>
+                <td>mimetype</td>
+            </tr>
+        </table>
+        <!-- <form action="/upload" method="post" enctype="multipart/form-data">
+            <input name="u_file" type="file" />
+            <img src="" alt="">
+            <button type="submit" >上傳</button>
+            </form> -->
+        <br><br><br><hr><br><br><br> 
+        <div class="left-member" id="left-member">
+            <img src="image/member.png" alt="member" id="userPhoto" height="100px" width="100px">
+        </div>
+        <div>
+            <input id='photo' type="file" name="file" >
+        </div>
+        <button class="commonbtn mag20pxbtn" onclick="uploadPhoto()">上傳</button>
     </div>
-    <button class="commonbtn mag20pxbtn" onclick="upload()">上傳</button>
-    <table id="filelist" border="1">
-        <tr>
-            <td>filename</td>
-            <td>size</td>
-            <td>path</td>
-            <td>encoding</td>
-            <td>mimetype</td>
-        </tr>
-    </table>
-    <!-- <form action="/upload" method="post" enctype="multipart/form-data">
-        <input name="u_file" type="file" />
-        <img src="" alt="">
-        <button type="submit" >上傳</button>
-        </form> -->
-    <br><br><br><hr><br><br><br> 
-    <div class="left-member" id="left-member">
-        <img src="image/member.png" alt="member" id="userPhoto" height="100px" width="100px">
-    </div>
-    <div>
-        <input id='photo' type="file" name="file" >
-    </div>
-    <button class="commonbtn mag20pxbtn" onclick="uploadPhoto()">上傳</button>
-    <script src="./javascripts/up.js"></script>    
+    <script src="./javascripts/up.js"></script>
+    <script src="footer.js"></script>
 </body>
 </html>

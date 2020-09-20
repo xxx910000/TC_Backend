@@ -33,6 +33,12 @@ nav{
     font-size: 16px;
     margin-right: 20px;
     color: #000;
+    transform: translateY(0);
+    transition: .3s;
+}
+.nav a:hover{
+    color: #888;
+    transform: translateY(-3px);
 }
 .nav button{
     height: 25px;
