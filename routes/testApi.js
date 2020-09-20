@@ -37,5 +37,17 @@ else {
 
 });
 
+//取得答題記錄
+router.get('/record',function(req,res){
+  testRecordModel.find(function(err,data){
+        if(err){
+            res.json({"status":1,"msg":"error"});
+          }
+          else{
+            res.json({"status":0,"msg":"success","data":data});
+          }
+    });
+});
+
 
 module.exports = router;

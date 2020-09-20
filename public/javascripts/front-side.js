@@ -117,7 +117,7 @@ function getCourseData() {
                     var course_item = `
                 <div class="left-item">
                     <div class="left-video">
-                        <div class="left-img1"><img src="image/video2.png" alt="video2"></div>
+                        <div class="left-img1"><a href="javascript:void(0)"><img src="image/class1.png" alt="video2"></a></div>
                         <div class="left-txt">${course.coursetype}<br>${course.coursechapter}</div>
                     </div>
                     <div class="left-ppt">
@@ -131,7 +131,7 @@ function getCourseData() {
                     var course_item = `
                     <div class="left-item">
                     <div class="left-video">
-                        <div class="left-img1"><img src="image/video2.png" alt="video3"></div>
+                        <div class="left-img1"><a href="javascript:void(0)"><img src="image/class1.png" alt="video3"></a></div>
                         <div class="left-txt">${course.coursetype}<br>${course.coursechapter}<br><img src="image/money.png" alt="money"> ${course.price}</div>
                     </div>
                     <div class="left-ppt">
@@ -155,10 +155,10 @@ function getTestData() {
             res.data.forEach(function (test) {
                 var test = `<div class="test">
                 <span class="question">題目 : ${test.題目}</span><br>
-                <input type="radio" name="${test.序號}" value="A">[A] ${test.選項A}<br>
-                <input type="radio" name="${test.序號}" value="B">[B] ${test.選項B}<br>
-                <input type="radio" name="${test.序號}" value="C">[C] ${test.選項C}<br>
-                <input type="radio" name="${test.序號}" value="D">[D] ${test.選項D}<br>
+                <input type="radio" name="${test.序號}" value="A"><span>[A] ${test.選項A}</span><br>
+                <input type="radio" name="${test.序號}" value="B"><span>[B] ${test.選項B}</span><br>
+                <input type="radio" name="${test.序號}" value="C"><span>[C] ${test.選項C}</span><br>
+                <input type="radio" name="${test.序號}" value="D"><span>[D] ${test.選項D}</span><br>
             </div>`;
                 $('.right').append(test);
             })
@@ -166,9 +166,13 @@ function getTestData() {
     })
 }
 
+//提交試卷
 function handAns() {
     var checked = $('input[type=radio]:checked');
     var record = new Array();
+    if($('input[type=radio]:checked').length<($('input[type=radio]').length)/4){
+        alert("有題目未作答！")
+        return false;}
     $.get("/test", function (res) {
         if (res.status == 0) {
             res.data.forEach(function (test) {
@@ -202,7 +206,7 @@ function handAns() {
                         var a = res.data.record[0].list;
                         var b = JSON.parse(a)
                         console.log(b)
-                        window.showModalDialog("test record.html",b);
+                        window.open("test record.html",'test record', config='height=800,width=900');
                     }
                 },
                 error: function (err) {
@@ -212,3 +216,36 @@ function handAns() {
         }
     })
 }
+
+//取得答題記錄
+function getRecord() {
+
+    $.get('/test/record',function (res) {
+        if (res.status == 0) {
+            var a = res.data[0].record[0].list;
+            var b = JSON.parse(a)
+            console.log(b)
+            var score = 0;
+            for(var i=0;i<b.length;i++){
+                var que = document.getElementsByName(b[i].序號)
+                for(var j=0;j<que.length;j++){
+                    if(b[i].handAns == que[j].value)
+                        que[j].checked = true;
+                    if(b[i].答案 == que[j].value)
+                        que[j].nextSibling.style.background  = "green";
+                }
+                if(b[i].gain){
+                    score+=20;
+                    var add = `答對了`;
+                que[0].parentNode.append(add);}else{
+                    var add = `答錯了`;
+                    que[0].parentNode.append(add);
+                }
+                
+            }
+            $('.right').append(`<div>得分為： ${score}</div>`)
+        }
+    });
+}
+
+//儲存影片學習進度

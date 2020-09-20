@@ -6,15 +6,19 @@ function upload(){
         return;
     }
     var u_file = document.getElementById('u_file');
-
+    var subject = document.getElementById('subject');
+    var description =  document.getElementById('description');
     // if(!/.(gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG)$/.test(img.value)){
     //     alert('圖片類型不正確！');
     //     return;
     // }
-    
+    console.log(subject+'..++..'+description)
     var formData = new FormData();
     for(var i=0;i<u_file.files.length;i++){
         formData.append('file',u_file.files[i]);
+        formData.append('subject',subject);
+        formData.append('description',description);
+        
 }
 
     var url = "/upload?account="+$.cookie('account');
@@ -27,7 +31,7 @@ function upload(){
         success: function(res){
             if(res.status==0){
                 alert("上傳成功！");
-                history.go(0);
+                //history.go(0);
             }
         },
         error: function(err){
@@ -68,7 +72,7 @@ getFilelist();
 
 //刪除檔案
 function onDelete(_id,filename){
-    if(!$.cookie('userID') || $.cookie('userID') == "null"){
+    if(!$.cookie('account') || $.cookie('account') == "null"){
         alert("請先登入會員！");
         location.href='/public/login.html';
         return;

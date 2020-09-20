@@ -5,6 +5,7 @@ var userSchema = new mongoose.Schema({
     username: String,
     score: Number,
     money: Number,
+    study: Number,
     goal: [],
     photo:[],
 });

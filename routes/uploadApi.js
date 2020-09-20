@@ -7,6 +7,7 @@ var userModel = require('../models/userModel');
 
 //上傳檔案
 router.post("/",upload.array('file'),function(req,res,next){ 
+    console.log(req.body)
     var upload = [];
     for(var i=0;i<req.files.length;i++){
     var upload_ = 

@@ -3,6 +3,7 @@ var uploadSchema = new mongoose.Schema({
     account: String,
     uploadid: String,
     description: String,
+    subject: String,
     originalname: String,
     encoding: String,
     mimetype: String,
@@ -10,6 +11,7 @@ var uploadSchema = new mongoose.Schema({
     filename: String,
     path: String,
     size: Number
+    
 },{
     timestamps:true
 });
