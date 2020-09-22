@@ -3,7 +3,7 @@ getUserData();
 getGoods("food");
 getPvpData();
 getCourseData();
-
+var study = 0;
 function checkLogin() {
     if (!$.cookie('account') || $.cookie('account') == "null") {
         alert("請先登入會員");
@@ -28,6 +28,8 @@ function getUserData() {
                 $('#week_').append(`<td>${b[i].week}</td>`)
                 $('#hour_').append(`<td>${b[i].hour}小時</td>`)
             }
+
+            study = res.data.study;
         }
     })
 }
@@ -117,8 +119,8 @@ function getCourseData() {
                     var course_item = `
                 <div class="left-item">
                     <div class="left-video">
-                        <div class="left-img1"><a href="javascript:void(0)"><img src="image/class1.png" alt="video2"></a></div>
-                        <div class="left-txt">${course.coursetype}<br>${course.coursechapter}</div>
+                        <div class="left-img1"><a href="javascript:void(0)"><img src="image/class2op.png" alt="video2" class="video-item"></a></div>
+                        <div class="left-txt">${course.coursetype}<br><span>${course.coursechapter}</span></div>
                     </div>
                     <div class="left-ppt">
                         <div class="left-img2"><img src="image/ppt1.png" alt="ppt1"></div>
@@ -131,8 +133,8 @@ function getCourseData() {
                     var course_item = `
                     <div class="left-item">
                     <div class="left-video">
-                        <div class="left-img1"><a href="javascript:void(0)"><img src="image/class1.png" alt="video3"></a></div>
-                        <div class="left-txt">${course.coursetype}<br>${course.coursechapter}<br><img src="image/money.png" alt="money"> ${course.price}</div>
+                        <div class="left-img1"><a href="javascript:void(0)"><img src="image/class2op.png" alt="video3" class="video-item"></a></div>
+                        <div class="left-txt">${course.coursetype}<br><span>${course.coursechapter}</span><br><img src="image/money.png" alt="money"> ${course.price}</div>
                     </div>
                     <div class="left-ppt">
                         <div class="left-img2"><img src="image/ppt3.png" alt="ppt3"></div>
@@ -143,8 +145,34 @@ function getCourseData() {
                     $('#course_list').append(course_item);
                 }
             })
+        
+            videoControl();
         }
     })
+}
+
+//切換影片控制
+function videoControl(){
+        var video_item = document.getElementsByClassName("video-item")
+        var aud = document.getElementById("myAudio");
+        for(var i=0;i<study;i++){
+            video_item[i].src="image/class2.png";
+        }
+
+        $('.video-item').on("click",function(){
+            if($(this).attr('src')=='image/class2op.png'){
+                alert("請先看完上一章！");}
+            else{
+                let txt = $(this).parent().parent().next()[0].lastChild;
+                console.log(txt.innerHTML)}
+        })
+        
+        if(aud.getAttribute("src") == "video/class"+study+".mp4"){
+            aud.onended = function() {
+                video_item[study].src="image/class2.png";
+                study++;
+        };
+        }
 }
 
 //取得試題資料
@@ -162,8 +190,11 @@ function getTestData() {
             </div>`;
                 $('.right').append(test);
             })
+            if(location.pathname != "/test.html")
+                getRecord();
         }
     })
+    
 }
 
 //提交試卷

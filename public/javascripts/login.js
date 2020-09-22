@@ -13,10 +13,16 @@ function login() {
                     alert(res.msg);
                 }
                 else {
-                    $.cookie('userName', res.data.username);
-                    $.cookie('account', res.data.account);
-                    alert('登入成功!');
-                    location.href = '../index after.html';
+                    if(res.data.account == "admin"){
+                        $.cookie('userName', res.data.username);
+                        $.cookie('account', res.data.account);
+                        alert('管理員登入成功!');
+                        location.href = '../index after-teacher.html';
+                    }else{
+                        $.cookie('userName', res.data.username);
+                        $.cookie('account', res.data.account);
+                        alert('登入成功!');
+                        location.href = '../index after.html';}
                 }
             });
     }

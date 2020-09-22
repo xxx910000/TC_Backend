@@ -6,18 +6,19 @@ function upload(){
         return;
     }
     var u_file = document.getElementById('u_file');
-    var subject = document.getElementById('subject');
-    var description =  document.getElementById('description');
+    var subject = $("#subject :selected").text();
+    var description = $('#description').val();
     // if(!/.(gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG)$/.test(img.value)){
     //     alert('圖片類型不正確！');
     //     return;
     // }
-    console.log(subject+'..++..'+description)
+
     var formData = new FormData();
     for(var i=0;i<u_file.files.length;i++){
         formData.append('file',u_file.files[i]);
-        formData.append('subject',subject);
-        formData.append('description',description);
+        if(subject != null && description != null){
+            formData.append('subject',subject);
+            formData.append('description',description);}
         
 }
 
@@ -31,7 +32,7 @@ function upload(){
         success: function(res){
             if(res.status==0){
                 alert("上傳成功！");
-                //history.go(0);
+                history.go(0);
             }
         },
         error: function(err){
@@ -136,5 +137,34 @@ function uploadPhoto(){
         }
     });
 
+}
+
+//取得檔案列表-審核用
+function getFilelist_check(){
+    if(!$.cookie('account') || $.cookie('account') == "null"){
+        alert("請先登入會員！");
+        location.href='/public/login.html';
+        return;
+    }
+    var url = "/upload?account="+$.cookie('account');
+    $.get(url,function(res){
+        if(res.status==0){
+            res.data.forEach(function(file){
+                var filelist =`
+                <tr>
+                <td>${file._id}</td>
+                <td>${file.account}</td>
+                <td>${file.filename}</td>
+                <td>456.pptx</td>
+                <td>${file.updatedAt}</td>
+                <td>${file.description}</td>
+                <td><button onclick="$(${'this'}).parent().next().text('通過');">通過</button><button onclick="$(${'this'}).parent().next().text('不通過');">不通過</button></td>
+                <td></td>
+            </tr>`;
+            $('#filelist_check').append(filelist);
+            })
+            
+        }
+    })
 }
 
