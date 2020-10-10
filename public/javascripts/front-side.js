@@ -145,34 +145,39 @@ function getCourseData() {
                     $('#course_list').append(course_item);
                 }
             })
-        
+
             videoControl();
         }
     })
 }
 
 //切換影片控制
-function videoControl(){
-        var video_item = document.getElementsByClassName("video-item")
-        var aud = document.getElementById("myAudio");
-        for(var i=0;i<study;i++){
-            video_item[i].src="image/class2.png";
-        }
+function videoControl() {
+    var video_item = document.getElementsByClassName("video-item")
+    var aud = document.getElementById("myAudio");
+    for (var i = 0; i < study; i++) {
+        video_item[i].src = "image/class2.png";
+    }
 
-        $('.video-item').on("click",function(){
-            if($(this).attr('src')=='image/class2op.png'){
-                alert("請先看完上一章！");}
-            else{
-                let txt = $(this).parent().parent().next()[0].lastChild;
-                console.log(txt.innerHTML)}
-        })
-        
-        if(aud.getAttribute("src") == "video/class"+study+".mp4"){
-            aud.onended = function() {
-                video_item[study].src="image/class2.png";
-                study++;
-        };
+    $('.video-item').on("click", function () {
+        if ($(this).attr('src') == 'image/class2op.png') {
+            alert("請先看完上一章！");
         }
+        else {
+            //let txt = $(this).parent().parent().next()[0].lastChild;
+            aud.src = "video/class" + study + ".mp4"
+            
+            //console.log(txt.innerHTML.substring(1,2))
+        }
+    })
+
+    if (aud.getAttribute("src") == "video/class" + study + ".mp4") {
+        aud.onended = function () {
+            video_item[study].src = "image/class2.png";
+            study++;
+            saveStudy(study);
+        };
+    }
 }
 
 //取得試題資料
@@ -190,26 +195,27 @@ function getTestData() {
             </div>`;
                 $('.right').append(test);
             })
-            if(location.pathname != "/test.html")
+            if (location.pathname != "/test.html")
                 getRecord();
         }
     })
-    
+
 }
 
 //提交試卷
 function handAns() {
     var checked = $('input[type=radio]:checked');
     var record = new Array();
-    if($('input[type=radio]:checked').length<($('input[type=radio]').length)/4){
+    if ($('input[type=radio]:checked').length < ($('input[type=radio]').length) / 4) {
         alert("有題目未作答！")
-        return false;}
+        return false;
+    }
     $.get("/test", function (res) {
         if (res.status == 0) {
             res.data.forEach(function (test) {
                 for (var i = 0; i < checked.length; i++) {
                     if (test.序號 == checked[i].name) {
-                        var gain_ = (test.答案 == checked[i].value)? true:false;
+                        var gain_ = (test.答案 == checked[i].value) ? true : false;
                         var record_ = {
                             序號: checked[i].name,
                             handAns: checked[i].value,
@@ -217,7 +223,7 @@ function handAns() {
                             gain: gain_,
                         };
                         record.push(record_);
-                        
+
                     }
                 }
             })
@@ -227,7 +233,7 @@ function handAns() {
             $.ajax({
                 url: url,
                 type: "PUT",
-                data: {list:JSON.stringify(record)},
+                data: { list: JSON.stringify(record) },
                 //traditional:true,
                 //processData:false,
                 //contentType:"json/application",
@@ -237,7 +243,7 @@ function handAns() {
                         var a = res.data.record[0].list;
                         var b = JSON.parse(a)
                         console.log(b)
-                        window.open("test record.html",'test record', config='height=800,width=900');
+                        window.open("test record.html", 'test record', config = 'height=800,width=900');
                     }
                 },
                 error: function (err) {
@@ -251,28 +257,29 @@ function handAns() {
 //取得答題記錄
 function getRecord() {
 
-    $.get('/test/record',function (res) {
+    $.get('/test/record', function (res) {
         if (res.status == 0) {
             var a = res.data[0].record[0].list;
             var b = JSON.parse(a)
             console.log(b)
             var score = 0;
-            for(var i=0;i<b.length;i++){
+            for (var i = 0; i < b.length; i++) {
                 var que = document.getElementsByName(b[i].序號)
-                for(var j=0;j<que.length;j++){
-                    if(b[i].handAns == que[j].value)
+                for (var j = 0; j < que.length; j++) {
+                    if (b[i].handAns == que[j].value)
                         que[j].checked = true;
-                    if(b[i].答案 == que[j].value)
-                        que[j].nextSibling.style.background  = "green";
+                    if (b[i].答案 == que[j].value)
+                        que[j].nextSibling.style.background = "green";
                 }
-                if(b[i].gain){
-                    score+=20;
+                if (b[i].gain) {
+                    score += 20;
                     var add = `答對了`;
-                que[0].parentNode.append(add);}else{
+                    que[0].parentNode.append(add);
+                } else {
                     var add = `答錯了`;
                     que[0].parentNode.append(add);
                 }
-                
+
             }
             $('.right').append(`<div>得分為： ${score}</div>`)
         }
@@ -280,3 +287,20 @@ function getRecord() {
 }
 
 //儲存影片學習進度
+function saveStudy(study){
+    let url = "/user/study?account=" + $.cookie('account');
+    $.ajax({
+        url: url,
+        type: "PATCH",
+        data: { study: study },
+
+        success: function (res) {
+            if (res.status == 0) {
+               
+            }
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
