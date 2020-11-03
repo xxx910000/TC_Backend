@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/TC',{useNewUrlParser: true,useUnifiedTopology: true});
+//mongoose.connect('mongodb://localhost:27017/TC',{useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://admin:admin@tc.mljre.mongodb.net/TC?retryWrites=true&w=majority',{useNewUrlParser: true,useUnifiedTopology: true});
 
 var indexRouter = require('./routes/index');
 
